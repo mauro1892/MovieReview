@@ -2,6 +2,9 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: "Fjalla One";
+    font-size: 22px;
+    text-decoration: none;
     /*PALLET*/
     /*
     DARK-BLUE: 1d3557;
@@ -27,11 +30,11 @@
 /*---------------------------------------*/
 
 
-/* MENU style-------------------------------------*/
+/* Menu -------------------------------------*/
 header{
     width: 100%;
-    padding: 50px;
-    background-color: #f1faee;
+    padding: 10px;
+    background-color: #1d3557;
     /*Flex properties*/
     display:flex;
     flex-direction: row;
@@ -39,22 +42,26 @@ header{
     justify-content: space-between;
 }   
 
-    /* NAV MENU style-------------------*/
+    /* Navigate menu -------------------*/
     header nav{
-        width: 50%;
+        width: 84%;
         /*Flex properties*/
         display: flex;
         flex-direction: row;
         flex-wrap: no-wrap;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
     }
-
+    /* Each item of menu ----------------*/
     header nav a{
-        height: 50px;
+        color: black;
+        height: 30px;
         background-color:#e63946;
         text-align: center;
         /*Flex properties*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
         flex-grow: 1;
         
     }
@@ -65,35 +72,44 @@ header{
     /* ---------------------------------*/
 /*--------------------------------------------------*/
 
-/* Gallery ----------------------------*/
-.box-gallery nav{
-    
-    width: 90%;
-    height: 90%;
-    margin-left: 50px;
-    margin-top: 20px;
-    /*Flex properties*/
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-       
-}
-
-div .box-gallery nav a{
-    background-color: #e63946;
-    width: 130px;
-    height: 130px;
-    text-align: center;
+/* Gallery -----------------------------------------*/
+div .box-gallery{
+    width: 100%;
+    height: 50%;
     /*Flex properties*/
     display: flex;
     align-items: center;
-    justify-content: center;
-}
+}  
+    /* Movie gallery--------------------------------*/
+    .box-gallery nav{
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        /*Flex properties*/
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: space-around;
+      
+    }
+        /* Each movie box------------------*/
+        div .box-gallery nav a{
+            background-color: #e63946;
+            width: 130px;
+            height: 130px;
+            text-align: center;
+            /*Flex properties*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-div .box-gallery a:hover{
-    background-color: #a8dadc;
-}
-/* Gallery ----------------------------*/
+        div .box-gallery a:hover{
+            background-color: #a8dadc;
+        }
+        /*----------------------------------*/
+    /* ---------------------------------------------*/
+/* --------------------------------------------------*/
 
 
 footer{
