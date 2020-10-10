@@ -1,9 +1,86 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>HOME</title>
+        <title>Movie Review</title>
+        <style>
+            *{
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+            .box-main{
+                width: 960px;
+                height: 800px;
+                margin-left: 10px   ;
+                background-color: cornflowerblue;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: no-wrap;
+                justify-content: space-between;
+            }
+
+            .box-menu{
+                height: 80px;
+                background-color: coral;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .box-gallery{
+                height: 690px;
+                background-color: cornsilk;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-around;
+            }
+            .box-bottom{
+                height: 30px;
+                background-color: darkcyan;
+                text-align: center;
+            }
+            .box-movie{
+                height: 150px;
+                width: 150px;
+                background-color: darkcyan;
+                text-align: center;
+            }
+            .box-item{
+                width: 80px;
+                background-color: darkorange;
+                text-align: center;
+                align-items: left;
+            }
+            .box-item-hover:hover{
+                background-color: darkred;
+            }
+        </style>
     </head>
     <body>
-        <h1>Peliculas</h1>
+        <div class="box-main">
+            <div class="box-menu">
+                <div class="box-logo">LOGO</div>
+                <div class="box-menu">
+                    <div class="box-item box-item-hover">Home</div>
+                    <div class="box-item box-item-hover">Search</div>
+                </div>
+            </div>
+            <div class="box-gallery">
+                <div class="box-movie">Alice in Wonderland</div>
+                <div class="box-movie">Rambo 6</div>
+                <div class="box-movie">Lo and Behold</div>
+                <div class="box-movie">Aftermath: Tsunami in Bolivia</div>
+                <div class="box-movie">Anihilation</div>
+                <div class="box-movie">Fast and Furious</div>
+                <div class="box-movie">The Matrix</div>
+                <div class="box-movie">The Matrix Reloaded</div>
+                <div class="box-movie">The Matrix Revolutions</div>
+                <div class="box-movie">Aftermath: Tsunami en Bolivia</div>
+                <div class="box-movie">Interstellar</div>
+                <div class="box-movie">The Lord of the Rings: The Fellowship of the Ring</div>
+            </div>
+            <div class="box-bottom">foot</div>
+        </div>
     </body>
 </html>
