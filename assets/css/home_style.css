@@ -2,51 +2,101 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    /*PALLET*/
+    /*
+    DARK-BLUE: 1d3557;
+    BLUE: 457b9d;
+    LIGHT-BLUE: a8dadc;
+    WHITE: f1faee;
+    RED: e63946;
+    */
 }
-.box-main{
-    width: 960px;
+
+/* MAIN container -----------------------*/
+.box-container{
+    width: 1000px;
     height: 800px;
-    margin-left: 10px   ;
-    background-color: cornflowerblue;
+    margin:auto;
+    background-color: #457b9d;
+    /*Flex properties*/
     display: flex;
     flex-direction: column;
     flex-wrap: no-wrap;
     justify-content: space-between;
 }
+/*---------------------------------------*/
 
-.box-menu{
-    height: 80px;
-    background-color: coral;
-    display: flex;
+
+/* MENU style-------------------------------------*/
+header{
+    width: 100%;
+    padding: 50px;
+    background-color: #f1faee;
+    /*Flex properties*/
+    display:flex;
     flex-direction: row;
-    justify-content: space-between;
-}
-.box-gallery{
-    height: 690px;
-    background-color: cornsilk;
-    display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
+    justify-content: space-between;
+}   
+
+    /* NAV MENU style-------------------*/
+    header nav{
+        width: 50%;
+        /*Flex properties*/
+        display: flex;
+        flex-direction: row;
+        flex-wrap: no-wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header nav a{
+        height: 50px;
+        background-color:#e63946;
+        text-align: center;
+        /*Flex properties*/
+        flex-grow: 1;
+        
+    }
+
+    header nav a:hover{
+        background-color: #a8dadc;
+    }
+    /* ---------------------------------*/
+/*--------------------------------------------------*/
+
+/* Gallery ----------------------------*/
+.box-gallery nav{
+    
+    width: 90%;
+    height: 90%;
+    margin-left: 50px;
+    margin-top: 20px;
+    /*Flex properties*/
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+       
+}
+
+div .box-gallery nav a{
+    background-color: #e63946;
+    width: 130px;
+    height: 130px;
+    text-align: center;
+    /*Flex properties*/
+    display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
-.box-bottom{
-    height: 30px;
-    background-color: darkcyan;
-    text-align: center;
+
+div .box-gallery a:hover{
+    background-color: #a8dadc;
 }
-.box-movie{
-    height: 150px;
-    width: 150px;
-    background-color: darkcyan;
-    text-align: center;
-}
-.box-item{
-    width: 80px;
-    background-color: darkorange;
-    text-align: center;
-    align-items: left;
-}
-.box-item-hover:hover{
-    background-color: darkred;
+/* Gallery ----------------------------*/
+
+
+footer{
+    height: 4%;
+    background-color: #1d3557;
 }
