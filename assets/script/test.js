@@ -1,0 +1,1 @@
+document.getElementById("Nav").innerHTML = "Home"
