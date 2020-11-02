@@ -45,6 +45,7 @@ class movieCollection{
 
 const carouselBox = document.getElementById("box_images");
 const carouselButton = document.querySelectorAll(".carousel-button");
+const carouselContainer = document.querySelector(".box-carousel");
 var carousel = new movieCollection();
 var imageIndex = 0;
 var imageTrasnlateX = 0;
@@ -65,13 +66,13 @@ carousel.collection.forEach(item => {
 });
 const imageSelector = document.querySelectorAll(".carousel-images");
 
-carouselBox.addEventListener("mousemove", event=>{
+carouselContainer.addEventListener("mousemove", event=>{
     carouselButton.forEach(btn=>{
         btn.style.opacity = "70%";
     });
 });
 
-carouselBox.addEventListener("mouseleave", event=>{
+carouselContainer.addEventListener("mouseleave", event=>{
     carouselButton.forEach(btn=>{
         btn.style.opacity = "0%";
     });

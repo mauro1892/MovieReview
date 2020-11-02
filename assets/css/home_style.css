@@ -33,11 +33,17 @@
     background-color: lawngreen;
     text-align: center;
 }
-
-.box-carousel{
+.box{
     background-color: black;
     width: 1500px;
     height: 700px;
+    display: flex;
+    align-items: center;
+}
+.box-carousel{
+    background-color: black;
+    width: 1500px;
+    height: 500px;
     display: flex;
     align-items: center;
     overflow: hidden;
