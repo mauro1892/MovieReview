@@ -15,104 +15,65 @@
     */
 }
 
-/* MAIN container -----------------------*/
 .box-container{
-    width: 1000px;
-    height: 800px;
-    margin:auto;
-    background-color: #457b9d;
-    /*Flex properties*/
-    display: flex;
-    flex-direction: column;
-    flex-wrap: no-wrap;
-    justify-content: space-between;
+    margin: 2rem auto;
+    margin-top: 0;
+    width: 1500px;
+    height: 900px;
 }
-/*---------------------------------------*/
 
+.box-title{
+    background-color: khaki;
+    text-align: center;
+    height: 80px;
 
-/* Menu -------------------------------------*/
-header{
-    width: 100%;
-    padding: 10px;
-    background-color: #1d3557;
-    /*Flex properties*/
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}   
+}
 
-    /* Navigate menu -------------------*/
-    header nav{
-        width: 84%;
-        /*Flex properties*/
-        display: flex;
-        flex-direction: row;
-        flex-wrap: no-wrap;
-        justify-content: center;
-        align-items: flex-end;
-    }
-    /* Each item of menu ----------------*/
-    header nav a{
-        color: black;
-        height: 30px;
-        background-color:#e63946;
-        text-align: center;
-        /*Flex properties*/
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-grow: 1;
-        
-    }
+.box-search{
+    background-color: lawngreen;
+    text-align: center;
+}
 
-    header nav a:hover{
-        background-color: #a8dadc;
-    }
-    /* ---------------------------------*/
-/*--------------------------------------------------*/
-
-/* Gallery -----------------------------------------*/
-div .box-gallery{
-    width: 100%;
-    height: 50%;
-    /*Flex properties*/
+.box-carousel{
+    background-color: black;
+    width: 1500px;
+    height: 700px;
     display: flex;
     align-items: center;
-}  
-    /* Movie gallery--------------------------------*/
-    .box-gallery nav{
-        background-color: black;
-        width: 100%;
-        height: 100%;
-        /*Flex properties*/
-        display:flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-content: space-around;
-      
-    }
-        /* Each movie box------------------*/
-        div .box-gallery nav a{
-            background-color: #e63946;
-            width: 130px;
-            height: 130px;
-            text-align: center;
-            /*Flex properties*/
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    overflow: hidden;
+    position: relative;
+}
 
-        div .box-gallery a:hover{
-            background-color: #a8dadc;
-        }
-        /*----------------------------------*/
-    /* ---------------------------------------------*/
-/* --------------------------------------------------*/
+.box-carousel-images{
+    background-color: black;
+    width: 1500px;
+    height: 300px;
+    margin: 2rem auto;
+    display: flex;
+}
+.carousel-images{
+    display: flex;
+    transform: translateX(0);
+    transition: transform 0.25s;
+}
+.carousel-button{
+    background-color: black;
+    opacity: 10%;
+    color: blanchedalmond;
+    border: none;
+    width: 3rem;
+    height: 300px;
+    font-size: 32px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 0.25s;
+}
 
+img{
+    border-radius: 5%;
+}
 
-footer{
-    height: 4%;
-    background-color: #1d3557;
+.next{
+    left: 1430px;
 }
