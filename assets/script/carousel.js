@@ -1,7 +1,7 @@
 class movie {
     imageMinSize = 300;
     imageMaxSize = 500;
-    constructor(title, description, genre, ageRestriction, image){
+    constructor(title, description, genre, ageRestriction, image) {
         this.title = title;
         this.description = description;
         this.genre = genre;
@@ -9,36 +9,36 @@ class movie {
         this.image = image;
     }
 
-    min_size(){
+    min_size() {
         return this.imageMinSize;
     }
 
-    max_size(){
+    max_size() {
         return this.imageMaxSize;
     }
 };
 
-class movieCollection{
-    
-    constructor(){
+class movieCollection {
+
+    constructor() {
         this.collection = [];
     }
 
-    add(title, description, genre, ageRestriction, image){
+    add(title, description, genre, ageRestriction, image) {
         let m = new movie(title, description, genre, ageRestriction, image);
         this.collection.push(m);
         return m;
     }
 
-    number(){
+    number() {
         return this.collection.length;
     }
 
-    movie(value){
+    movie(value) {
         return this.collection[value];
     }
 
-    collection(){
+    collection() {
         return this.collection;
     }
 }
@@ -62,37 +62,48 @@ carousel.add("The Irishman", "asd", "Terror", 18, "./assets/images/the-irishman5
 carousel.add("Blade Runner", "asd", "Terror", 14, "./assets/images/blade_runner500x500.jpg");
 
 carousel.collection.forEach(item => {
-    carouselBox.innerHTML += "<img class='carousel-images' src="+item.image+" width="+item.imageMinSize+"px height="+item.imageMinSize+"px><br>";
+    carouselBox.innerHTML += "<img class='carousel-images' src=" + item.image + " width=" + item.imageMinSize + "px height=" + item.imageMinSize + "px><br>";
 });
 const imageSelector = document.querySelectorAll(".carousel-images");
 
-carouselContainer.addEventListener("mousemove", event=>{
-    carouselButton.forEach(btn=>{
+carouselContainer.addEventListener("mousemove", event => {
+    carouselButton.forEach(btn => {
         btn.style.opacity = "70%";
     });
 });
 
-carouselContainer.addEventListener("mouseleave", event=>{
-    carouselButton.forEach(btn=>{
+carouselContainer.addEventListener("mouseleave", event => {
+    carouselButton.forEach(btn => {
         btn.style.opacity = "0%";
     });
 });
 
-carouselButton.forEach(button=>{
-    button.addEventListener("click", (event) =>{
-        if (event.target.id === "next"){
-            if (imageIndex < carousel.number() - 5){
+carouselButton.forEach(button => {
+    button.addEventListener("click", (event) => {
+        if (event.target.id === "next") {
+            if (imageIndex < carousel.number() - 5) {
                 imageIndex++;
-                imageTrasnlateX-=300;
+                imageTrasnlateX -= 300;
             }
         } else {
-            if (imageIndex != 0){
-            imageIndex--;
-            imageTrasnlateX+=300;
+            if (imageIndex != 0) {
+                imageIndex--;
+                imageTrasnlateX += 300;
             }
         }
-        imageSelector.forEach(imageItem=>{
+        imageSelector.forEach(imageItem => {
             imageItem.style.transform = `translateX(${imageTrasnlateX}px)`;
         });
+    });
+});
+
+imageSelector.forEach(p => {
+    p.addEventListener("mouseover", evn => {
+        p.style.transform = "scale(1.2,1.2)";
+        p.style.zIndex = "1";
+    });
+    p.addEventListener("mouseleave", evn => {
+        p.style.transform = "scale(1,1)";
+        p.style.zIndex = "0";
     });
 });
