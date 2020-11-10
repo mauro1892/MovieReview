@@ -60,10 +60,15 @@ carousel.add("World War Z", "asd", "Terror", 16, "./assets/images/world_war_z500
 carousel.add("The Lord of Ring: Fellowship of the ring", "asd", "Fantasy", 12, "./assets/images/the-lord-of-the-rings-fellowship-of-the-ring-500x500.jpg");
 carousel.add("The Irishman", "asd", "Terror", 18, "./assets/images/the-irishman500x500.jpg");
 carousel.add("Blade Runner", "asd", "Terror", 14, "./assets/images/blade_runner500x500.jpg");
+var load = 0;
+var imgWidth = 0;
 
+if (load == 0){
 carousel.collection.forEach(item => {
-    carouselBox.innerHTML += "<img class='carousel-images' src=" + item.image + " width=" + item.imageMinSize + "px height=" + item.imageMinSize + "px><br>";
+    carouselBox.innerHTML += "<img class='carousel-images' src=" + item.image + ">";
 });
+load=1;
+}
 const imageSelector = document.querySelectorAll(".carousel-images");
 
 carouselContainer.addEventListener("mousemove", event => {
@@ -78,17 +83,18 @@ carouselContainer.addEventListener("mouseleave", event => {
     });
 });
 
+
 carouselButton.forEach(button => {
     button.addEventListener("click", (event) => {
         if (event.target.id === "next") {
             if (imageIndex < carousel.number() - 5) {
                 imageIndex++;
-                imageTrasnlateX -= 300;
+                imageTrasnlateX -= imgWidth;
             }
         } else {
             if (imageIndex != 0) {
                 imageIndex--;
-                imageTrasnlateX += 300;
+                imageTrasnlateX += imgWidth;
             }
         }
         imageSelector.forEach(imageItem => {
@@ -97,13 +103,9 @@ carouselButton.forEach(button => {
     });
 });
 
-imageSelector.forEach(p => {
-    p.addEventListener("mouseover", evn => {
-        p.style.transform = "scale(1.2,1.2)";
-        p.style.zIndex = "1";
-    });
-    p.addEventListener("mouseleave", evn => {
-        p.style.transform = "scale(1,1)";
-        p.style.zIndex = "0";
-    });
+
+imageSelector.forEach(img=>{
+    imgWidth = img.clientWidth;
 });
+
+alert(imgWidth);

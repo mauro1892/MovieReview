@@ -31,7 +31,7 @@
 .box-title {
     background-color: khaki;
     text-align: center;
-    height: 80px;
+    height: auto;
 }
 
 .box-search {
@@ -67,6 +67,8 @@
 
 .carousel-images {
     display: flex;
+    max-width: 15%;
+    height: auto;
     transform: translateX(0);
     transition: transform 0.25s;
 }
@@ -77,12 +79,16 @@
     color: blanchedalmond;
     border: none;
     width: 3rem;
-    height: 40%;
+    height: 100%;
     font-size: 32px;
     cursor: pointer;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     transition: opacity 0.25s;
+}
+
+.carousel-button:focus {
+    outline-style: none;
 }
 
 img {
@@ -90,5 +96,5 @@ img {
 }
 
 .next {
-    left: 95%;
+    left: 97%;
 }
