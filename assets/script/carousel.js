@@ -49,6 +49,7 @@ const carouselContainer = document.querySelector(".box-carousel");
 var carousel = new movieCollection();
 var imageIndex = 0;
 var imageTrasnlateX = 0;
+var imageWidth = 0;
 
 carousel.add("Alice in wonderland", "asd", "Fantasy", 10, "./assets/images/alice_in_wonderland500x500.jpg");
 carousel.add("A quiet place", "asd", "Terror", 16, "./assets/images/a_quiet_place500x500.jpg");
@@ -61,15 +62,18 @@ carousel.add("The Lord of Ring: Fellowship of the ring", "asd", "Fantasy", 12, "
 carousel.add("The Irishman", "asd", "Terror", 18, "./assets/images/the-irishman500x500.jpg");
 carousel.add("Blade Runner", "asd", "Terror", 14, "./assets/images/blade_runner500x500.jpg");
 var load = 0;
-var imgWidth = 0;
+var ready = 0;
 
 if (load == 0){
-carousel.collection.forEach(item => {
-    carouselBox.innerHTML += "<img class='carousel-images' src=" + item.image + ">";
-});
+    carousel.collection.forEach(item => {
+        carouselBox.innerHTML += "<img class='carousel-images' src=" + item.image + ">";
+    });
 load=1;
 }
 const imageSelector = document.querySelectorAll(".carousel-images");
+
+
+
 
 carouselContainer.addEventListener("mousemove", event => {
     carouselButton.forEach(btn => {
@@ -84,28 +88,46 @@ carouselContainer.addEventListener("mouseleave", event => {
 });
 
 
+
+
+
+let stateCheck = setInterval(() => {
+    if (document.readyState === 'complete') {
+      clearInterval(stateCheck);
+      imageSelector.forEach(img=>{
+        imageWidth = img.clientWidth;
+      });
+    }
+}, 100);
+
+function resizeImage(){
+    imageSelector.forEach(img=>{
+        imageWidth = img.clientWidth;
+      });
+      ready = 1;
+}
+
+window.addEventListener("resize", resizeImage);
+
+resizeImage();
+
+if (ready===1){
 carouselButton.forEach(button => {
     button.addEventListener("click", (event) => {
         if (event.target.id === "next") {
             if (imageIndex < carousel.number() - 5) {
                 imageIndex++;
-                imageTrasnlateX -= imgWidth;
+                imageTrasnlateX -= imageWidth;
             }
         } else {
             if (imageIndex != 0) {
                 imageIndex--;
-                imageTrasnlateX += imgWidth;
+                imageTrasnlateX += imageWidth;
             }
         }
         imageSelector.forEach(imageItem => {
-            imageItem.style.transform = `translateX(${imageTrasnlateX}px)`;
+            imageItem.style.transform = `translateX(${imageTrasnlateX}%)`;
         });
     });
 });
-
-
-imageSelector.forEach(img=>{
-    imgWidth = img.clientWidth;
-});
-
-alert(imgWidth);
+}

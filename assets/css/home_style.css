@@ -67,7 +67,7 @@
 
 .carousel-images {
     display: flex;
-    max-width: 15%;
+    max-width: 20%;
     height: auto;
     transform: translateX(0);
     transition: transform 0.25s;
